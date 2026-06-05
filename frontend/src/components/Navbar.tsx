@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown, Package, Anchor, Truck, Warehouse, Shield, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -34,15 +35,22 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 bg-morris-blue flex items-center justify-center rounded-sm">
-              <span className="text-white font-black text-2xl tracking-tighter">M</span>
+            <div className="w-12 h-12 bg-zinc-900 border border-zinc-700 flex items-center justify-center rounded-sm overflow-hidden">
+              <Image
+                src="/images/bonded.png"
+                alt="Bonded facility logo"
+                width={48}
+                height={48}
+                className="object-contain p-1"
+                priority
+              />
             </div>
             <div>
               <span className="text-white font-black text-xl tracking-tight uppercase leading-none block group-hover:text-morris-blue transition-colors">
                 Morris Export
               </span>
-              <span className="text-zinc-400 text-xs font-bold tracking-widest uppercase">
-                Services
+              <span className="text-zinc-400 text-[10px] font-bold tracking-wide uppercase leading-tight block max-w-[260px]">
+                Morris Export is a trusted U.S. Customs BONDED warehouse
               </span>
             </div>
           </Link>

@@ -71,6 +71,42 @@ export default function Home() {
         </div>
       </section>
 
+      <SectionLayout dark title="U.S. Customs BONDED Warehouse" subtitle="Compliance & Control">
+        <div className="border border-zinc-800 bg-zinc-900/70 p-8 md:p-12">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+            <div className="flex items-center gap-4 shrink-0">
+              <div className="w-24 h-24 border border-zinc-700 bg-zinc-950 p-2 flex items-center justify-center">
+                <Image
+                  src="/images/bonded.png"
+                  alt="U.S. Customs bonded logo"
+                  width={88}
+                  height={88}
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-sm md:text-base text-zinc-200 font-bold uppercase tracking-wide max-w-md leading-relaxed">
+                Morris Export is a trusted U.S. Customs BONDED warehouse
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+              <div className="border border-zinc-800 bg-zinc-950 p-5">
+                <h3 className="text-white font-black uppercase tracking-wide text-sm mb-2">Customs Supervision</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">Cargo can be stored under U.S. Customs control with documented chain-of-custody and compliance workflows.</p>
+              </div>
+              <div className="border border-zinc-800 bg-zinc-950 p-5">
+                <h3 className="text-white font-black uppercase tracking-wide text-sm mb-2">Duty Deferral</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">Import duties may be deferred while freight remains in bonded status, improving project cash-flow planning.</p>
+              </div>
+              <div className="border border-zinc-800 bg-zinc-950 p-5">
+                <h3 className="text-white font-black uppercase tracking-wide text-sm mb-2">Secure Staging</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">Industrial cargo can be staged, repacked, and prepared for export from a monitored, compliance-ready location.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SectionLayout>
+
       {/* Why Choose Us */}
       <SectionLayout dark title="Infrastructure & Capacity" subtitle="Why Choose Us">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

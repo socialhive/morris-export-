@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 
 export default function Footer() {
@@ -9,8 +10,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-morris-blue flex items-center justify-center rounded-sm">
-                <span className="text-white font-black text-xl tracking-tighter">M</span>
+              <div className="w-10 h-10 bg-zinc-900 border border-zinc-700 flex items-center justify-center rounded-sm overflow-hidden">
+                <Image
+                  src="/images/bonded.png"
+                  alt="Bonded facility logo"
+                  width={40}
+                  height={40}
+                  className="object-contain p-0.5"
+                />
               </div>
               <div>
                 <span className="text-white font-black text-lg tracking-tight uppercase leading-none block">
@@ -22,7 +29,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
-              The oldest and largest export packing company on the Gulf Coast. Engineered for global transit since 1942.
+              Morris Export is a trusted U.S. Customs BONDED warehouse. The oldest and largest export packing company on the Gulf Coast, engineered for global transit since 1942.
             </p>
           </div>
 
@@ -73,8 +80,17 @@ export default function Footer() {
               Accreditations
             </h4>
             <div className="grid grid-cols-2 gap-4">
-              <div className="h-16 bg-zinc-900 border border-zinc-800 flex items-center justify-center p-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
-                <span className="text-[10px] font-bold text-center uppercase">ISO 9001<br/>Certified</span>
+              <div className="h-16 bg-zinc-900 border border-zinc-800 p-2 opacity-70 hover:opacity-100 transition-all flex items-center gap-2">
+                <Image
+                  src="/images/bonded.png"
+                  alt="Bonded certified"
+                  width={56}
+                  height={56}
+                  className="h-full w-auto object-contain"
+                />
+                <span className="text-[8px] font-bold leading-tight uppercase text-zinc-300">
+                  Morris Export is a trusted U.S. Customs BONDED warehouse
+                </span>
               </div>
               <div className="h-16 bg-zinc-900 border border-zinc-800 flex items-center justify-center p-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
                 <span className="text-[10px] font-bold text-center uppercase">C-TPAT<br/>Compliant</span>
