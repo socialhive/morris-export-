@@ -265,8 +265,8 @@
       <div class="flex justify-between h-24 items-center">
         <!-- Logo -->
         <a href="#/" class="flex-shrink-0 flex items-center group">
-          <div class="h-14 bg-zinc-900 border border-zinc-700 flex items-center justify-center rounded-sm overflow-hidden px-3">
-            <img src="images/morris logo no bg header.png" alt="Morris Export logo" class="h-full w-auto object-contain py-1">
+          <div class="h-16 flex items-center justify-center overflow-hidden">
+            <img src="images/morris-logo.png" alt="Morris Export logo" class="h-full w-auto object-contain">
           </div>
         </a>
         <div class="hidden lg:flex items-center space-x-10" id="nav-links">
@@ -305,13 +305,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-16">
         <div class="col-span-1 md:col-span-2">
-          <a href="#/" class="mb-8 flex items-center gap-4 group">
-          <div class="w-16 h-16 bg-zinc-900 border border-zinc-700 flex items-center justify-center rounded-sm overflow-hidden">
-            <img src="images/morris logo no bg header.png" alt="Morris Export logo" class="w-full h-full object-contain p-1" loading="lazy" decoding="async">
-            </div>
-            <div class="flex flex-col justify-center">
-                <span class="text-white font-black text-xl tracking-tight uppercase leading-none group-hover:text-morris-blue transition-colors">Morris Export</span>
-                <span class="text-zinc-400 text-[10px] font-bold tracking-wide uppercase leading-tight">Morris Export is a trusted U.S. Customs BONDED warehouse</span>
+          <a href="#/" class="mb-8 flex items-center group">
+            <div class="h-16 flex items-center justify-center overflow-hidden">
+              <img src="images/morris-logo.png" alt="Morris Export logo" class="h-full w-auto object-contain" loading="lazy" decoding="async">
             </div>
           </a>
           <p class="max-w-md mb-8 text-zinc-500 text-lg leading-relaxed">
@@ -783,6 +779,68 @@
         ],
         industries: ['Freight Forwarders', 'Project Cargo Managers', 'Procurement Teams', 'Export Compliance', 'Global Manufacturers'],
         keyBenefits: ['Live Tracking', '24/7 Access', 'Photo Documentation', 'ERP Integration', 'Multi-User Access', 'Full Audit Trail']
+      },
+      {
+        id: 'packing-preservation',
+        title: 'Packing & Preservation',
+        slug: 'packing-preservation',
+        icon: 'archive',
+        coverImg: 'images/onsitepacking/onsitepacking3.webp',
+        heroImg: 'images/onsitepacking/onsitepackingservices.webp',
+        category: 'Packing & Crating',
+        description: 'Long-term preservation packing for sensitive equipment and precision machinery.',
+        content: 'Morris Export Services provides comprehensive packing and preservation solutions for equipment that must survive extended storage or long-haul international transit. Our preservation protocols protect against corrosion, moisture, dust, and physical damage throughout the storage or shipping lifecycle.',
+        features: ['VCI film and desiccant preservation systems', 'Military and industrial preservation standards', 'Complete documentation and inspection records'],
+        longDescription: [
+          'Preservation packing is a discipline that goes beyond standard export crating. When equipment must be stored for months or years — or shipped through multiple climate zones on an extended sea voyage — the materials and methods used must be engineered for the long haul. Morris Export Services applies proven preservation protocols developed over eight decades of industrial packing experience.',
+          'Our preservation teams assess every piece of equipment for vulnerable surfaces: exposed machined metal, threaded connections, painted surfaces, electronic components, and seals. Each vulnerability is addressed with the appropriate preservation method — VCI films, desiccant packs, moisture-barrier foil, rust-inhibiting compounds, or sealed nitrogen atmospheres for the most sensitive applications.',
+          'We also manage preservation documentation, providing inspection certificates, desiccant change schedules, and re-inspection records that satisfy customer quality requirements, insurance documentation standards, and project cargo compliance audits. Whether you are preserving a single pump or an entire plant shutdown package, our teams deliver the same meticulous standard.'
+        ],
+        stats: [
+          { value: '5yr+', label: 'Preservation-Rated Systems Available' },
+          { value: 'VCI & Foil', label: 'Multi-Layer Protection Methods' },
+          { value: 'Documented', label: 'Inspection & Certification Records' }
+        ],
+        process: [],
+        faqs: [
+          { q: 'What is the difference between packing and preservation packing?', a: 'Standard export packing is designed to protect cargo during a single transit event. Preservation packing is engineered for extended protection — typically 1–5+ years — using moisture barriers, corrosion inhibitors, and sealed environments that prevent degradation over time.' },
+          { q: 'What industries require preservation packing?', a: 'Oil and gas operators storing capital spares, defense contractors packaging equipment for long-term pre-positioning, and OEMs shipping equipment to remote project sites with long installation timelines all rely heavily on preservation packing.' },
+          { q: 'Do you apply preservation on-site at our facility?', a: 'Yes. Our mobile preservation teams travel to customer facilities with all required materials and equipment to perform in-place preservation without requiring transport of equipment to our facility.' },
+          { q: 'Can you re-inspect and re-pack previously preserved equipment?', a: 'Yes. We perform condition assessments on previously packed equipment, replace exhausted desiccants, repair compromised vapor barriers, and re-certify preservation status as required.' }
+        ],
+        industries: ['Oil & Gas', 'Defense & Aerospace', 'Power Generation', 'Capital Equipment OEMs', 'EPC Contractors'],
+        keyBenefits: ['Long-Term Protection', 'VCI & Desiccant Systems', 'Moisture Barrier Foil', 'On-Site Available', 'Full Documentation', 'Re-Inspection Service']
+      },
+      {
+        id: 'flat-rack-securing',
+        title: 'Flat Rack Securing',
+        slug: 'flat-rack-securing',
+        icon: 'layers',
+        coverImg: 'images/containerization/container1.webp',
+        heroImg: 'images/containerization/container2.webp',
+        category: 'Logistics & Transport',
+        description: 'Specialized lashing, blocking, and bracing for flat rack and open-top container shipments.',
+        content: 'Morris Export Services provides expert flat rack securing for oversized and out-of-gauge cargo that cannot be containerized in standard boxes. Our certified teams design and execute custom lashing and blocking plans that meet carrier, insurance, and international maritime standards for flat rack and open-top container shipments.',
+        features: ['Custom lashing and blocking plans', 'Carrier and IMO compliant securing', 'Certified rigging and dunnage application'],
+        longDescription: [
+          'Flat rack containers are essential for shipping machinery, vessels, transformers, structural steel, and other cargo that exceeds standard container dimensions. But placing oversized equipment on a flat rack is only half the challenge — securing it correctly to survive the dynamic forces of ocean transit is where expertise makes the difference between a clean delivery and a catastrophic loss.',
+          'Morris Export Services applies engineered lashing plans to every flat rack shipment, calculating the required lashing capacity based on cargo weight, center of gravity, and the IMO/CTU Code force factors for the intended trade lane. We use certified wire rope, chain, ratchet straps, and timber blocking systems sized to the specific cargo — never generic or guesswork-based methods.',
+          'Our flat rack securing teams work directly with freight forwarders, ocean carriers, and cargo surveyors to ensure compliance with carrier booking requirements, surveyor sign-off conditions, and shipper insurance stipulations. We also provide load plans and lashing certificates that accompany the shipment documentation package for letter of credit and insurance compliance.'
+        ],
+        stats: [
+          { value: 'IMO Aligned', label: 'CTU Code Securing Standards' },
+          { value: 'Certified', label: 'Lashing & Rigging Teams' },
+          { value: 'OOG Capable', label: 'Any Dimension Cargo' }
+        ],
+        process: [],
+        faqs: [
+          { q: 'What types of cargo do you secure on flat racks?', a: 'We regularly secure heavy machinery, transformers, pressure vessels, industrial vehicles, boats, structural fabrications, and other out-of-gauge cargo that requires flat rack or open-top container solutions.' },
+          { q: 'Do you provide lashing certificates?', a: 'Yes. A lashing certificate documenting the securing method, materials used, calculated capacity, and responsible party is provided with every flat rack shipment to support carrier requirements and cargo insurance documentation.' },
+          { q: 'Can you coordinate the flat rack booking with the carrier?', a: 'We work closely with freight forwarders and can coordinate directly with ocean carriers on flat rack availability, booking, and special cargo handling requirements at the Port of Houston.' },
+          { q: 'Do cargo surveyors approve your lashing plans?', a: 'Yes. When cargo surveys are required by the shipper or underwriter, we work with approved cargo surveyors and adjust our lashing plans to achieve sign-off before container gate-in.' }
+        ],
+        industries: ['Oil & Gas', 'Power Generation', 'Marine & Offshore', 'Heavy Manufacturing', 'Infrastructure & Construction'],
+        keyBenefits: ['IMO/CTU Compliant', 'Lashing Certificates', 'Custom Blocking Plans', 'Port of Houston Access', 'Surveyor Coordination', 'OOG All Dimensions']
       }
     ];
 
@@ -893,7 +951,7 @@
 
     // Templates
     function renderHome() {
-      const servicesGridHtml = SERVICES.slice(0, 8).map(s => `
+      const servicesGridHtml = SERVICES.map(s => `
                 <a href="#/services/${s.slug}" class="service-tile group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white border border-white/20">
                     <div class="relative h-48 md:h-64 overflow-hidden">
                         <img src="${s.coverImg}" alt="${s.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
@@ -1022,8 +1080,8 @@
                             <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 md:p-12">
                               <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
                                 <div class="flex items-center gap-4 shrink-0">
-                                  <div class="w-28 h-28 bg-zinc-950 border border-zinc-700 rounded-xl flex items-center justify-center p-2">
-                                    <img src="images/morris logo no bg header.png" alt="Morris Export logo" class="w-full h-full object-contain" loading="lazy" decoding="async">
+                                  <div class="h-20 bg-zinc-950 border border-zinc-700 rounded-xl flex items-center justify-center px-4">
+                                    <img src="images/morris-logo.png" alt="Morris Export logo" class="h-full w-auto object-contain" loading="lazy" decoding="async">
                                   </div>
                                   <p class="text-sm md:text-base text-zinc-200 font-bold uppercase tracking-wide leading-relaxed max-w-md">Morris Export is a trusted U.S. Customs BONDED warehouse</p>
                                 </div>
