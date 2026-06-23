@@ -37,8 +37,8 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-12 h-12 bg-zinc-900 border border-zinc-700 flex items-center justify-center rounded-sm overflow-hidden">
               <Image
-                src="/images/bonded.png"
-                alt="Bonded facility logo"
+                src="/images/morris logo no bg header.png"
+                alt="Morris Export logo"
                 width={48}
                 height={48}
                 className="object-contain p-1"

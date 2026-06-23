@@ -9,8 +9,9 @@ export default function Services() {
       description: "Industrial strength export packing.",
       services: [
         { title: "Custom Wooden Crating", desc: "Engineered specs for any dimension.", img: "/images/crating/customcrating.webp" },
-        { title: "Vapor Barrier & Shrinkwrap", desc: "Protection against moisture and salt.", img: "/images/vinyl wrap protection/vinylwrap2.webp" },
-        { title: "Onsite Packing", desc: "We deploy our crews to your facility.", img: "/images/onsitepacking/onsitepacking3.webp" }
+        { title: "Vapor Barrier & Shrinkwrap", desc: "Plastics protection against moisture and salt.", img: "/images/vinyl wrap protection/vinylwrap2.webp" },
+        { title: "Onsite Packing", desc: "We deploy our crews to your facility.", img: "/images/onsitepacking/onsitepacking3.webp" },
+        { title: "Packing & Preservation", desc: "Protective materials and cushioning for delicate cargo.", img: "/images/onsitepacking/onsitepacking3.webp" }
       ]
     },
     {
@@ -19,7 +20,8 @@ export default function Services() {
       services: [
         { title: "Containerization", desc: "Flat racks, open tops, and standard boxes.", img: "/images/containerization/container1.webp" },
         { title: "Heavy Lift & Transloading", desc: "140K lbs lift capacity on site.", img: "/images/crane/crane.webp" },
-        { title: "Drayage & Trucking", desc: "Private fleet for heavy haul.", img: "/images/trucking/trucking2.webp" }
+        { title: "Drayage & Trucking", desc: "Private fleet for heavy haul.", img: "/images/trucking/trucking2.webp" },
+        { title: "Flat Rack Securing", desc: "Specialized lashing and securing for flat racks.", img: "/images/containerization/container1.webp" }
       ]
     },
     {

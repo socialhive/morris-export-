@@ -12,8 +12,8 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 bg-zinc-900 border border-zinc-700 flex items-center justify-center rounded-sm overflow-hidden">
                 <Image
-                  src="/images/bonded.png"
-                  alt="Bonded facility logo"
+                  src="/images/morris logo no bg header.png"
+                  alt="Morris Export logo"
                   width={40}
                   height={40}
                   className="object-contain p-0.5"
@@ -82,8 +82,8 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-4">
               <div className="h-16 bg-zinc-900 border border-zinc-800 p-2 opacity-70 hover:opacity-100 transition-all flex items-center gap-2">
                 <Image
-                  src="/images/bonded.png"
-                  alt="Bonded certified"
+                  src="/images/morris logo no bg header.png"
+                  alt="Morris Export logo"
                   width={56}
                   height={56}
                   className="h-full w-auto object-contain"
