@@ -4,12 +4,8 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <section className="pt-32 pb-16 bg-zinc-950 border-b border-zinc-900 relative overflow-hidden">
-        <div className="absolute right-0 top-0 w-1/2 h-full opacity-20">
-          <Image src="/images/team/rayvargas.webp" alt="Historical" fill className="object-cover grayscale" />
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 to-transparent"></div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="pt-32 pb-16 bg-zinc-950 border-b border-zinc-900 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-6">History & <br/>Credentials</h1>
           <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed">
             Since 1942, Morris Export Services has been the backbone of Gulf Coast industrial logistics, blending old-world craftsmanship with modern infrastructure.
@@ -37,10 +33,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="relative h-[500px] border border-zinc-800 bg-zinc-900 p-2">
-            <Image src="/images/team/rayvargas.webp" alt="Team History" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
-            <div className="absolute inset-0 bg-morris-blue mix-blend-multiply opacity-20"></div>
-          </div>
+          <div className="relative h-[500px] border border-zinc-800 bg-zinc-900 p-2" />
         </div>
       </SectionLayout>
 
