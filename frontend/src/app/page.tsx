@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
 import ServiceCard from "@/components/ServiceCard";
-import { ShieldCheck, Anchor, Truck, Warehouse, CheckCircle2, ArrowRight } from "lucide-react";
+import { ShieldCheck, Anchor, Truck, Warehouse, CheckCircle2, ArrowRight, PackageCheck, Boxes, HardHat, Building2, BadgeCheck, MoveRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -131,6 +131,123 @@ export default function Home() {
       </SectionLayout>
 
       {/* Services Overview */}
+      <SectionLayout title="Comprehensive Logistics & Transportation" subtitle="What We Do">
+        <div className="grid grid-cols-1 xl:grid-cols-[1.2fr_0.8fr] gap-8">
+          <div className="bg-zinc-950 border border-zinc-800 p-8 md:p-10">
+            <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+              At Morris Export Services, we provide comprehensive logistics and transportation solutions tailored to your operation. From export packing and crating to heavy-duty warehousing and specialized trucking, our team helps move your cargo safely and efficiently from the Port of Houston and beyond.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: "Export Packing & Crating", desc: "Secure packing and crating for ocean or air freight." },
+                { title: "Onsite Packing", desc: "Professional packing services delivered at your location." },
+                { title: "Container Stuffing & Transloading", desc: "Expert loading, blocking, bracing, and unloading for efficient cargo movement." },
+                { title: "Drayage & Out of Gauge Trucking", desc: "Reliable service for oversized, heavy, and specialized loads." },
+                { title: "Warehousing & Storage", desc: "Indoor, climate-controlled, and outdoor storage options." },
+                { title: "Hazmat Handling", desc: "Storage, packing, and drayage capabilities for hazardous materials." }
+              ].map((item) => (
+                <div key={item.title} className="border border-zinc-800 bg-zinc-900/70 p-5">
+                  <h3 className="text-white font-black uppercase tracking-wider text-sm mb-2">{item.title}</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-morris-red/10 via-zinc-950 to-zinc-950 border border-morris-red/30 p-8 md:p-10 flex flex-col justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 text-morris-red font-black uppercase tracking-[0.2em] text-sm mb-6">
+                <PackageCheck className="w-5 h-5" />
+                Proven Experience
+              </div>
+              <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white mb-6">
+                Trusted by manufacturers, energy operators, and global shippers.
+              </h3>
+              <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+                With more than 40 years of experience, we bring dependable execution, heavy-lift capability, and tailored support to every shipment.
+              </p>
+            </div>
+            <div className="space-y-3 text-sm text-zinc-300">
+              <div className="flex items-start gap-3"><BadgeCheck className="w-5 h-5 text-morris-red mt-0.5" /><span>Secure handling for delicate, oversized, and mission-critical cargo.</span></div>
+              <div className="flex items-start gap-3"><BadgeCheck className="w-5 h-5 text-morris-red mt-0.5" /><span>Flexible material handling, forklift rental, and warehouse relocation support.</span></div>
+              <div className="flex items-start gap-3"><BadgeCheck className="w-5 h-5 text-morris-red mt-0.5" /><span>Onsite experts ready to protect your freight from loading to delivery.</span></div>
+            </div>
+            <Link href="/contact" className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-white hover:text-morris-red transition-colors">
+              Request a Quote <MoveRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </SectionLayout>
+
+      <SectionLayout dark title="Where We Excel" subtitle="Specialized Capabilities">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              icon: <ShieldCheck className="w-7 h-7" />,
+              title: "Wrap Protection",
+              desc: "Protective wrapping helps prevent damage during transport for fragile, delicate, and high-value products."
+            },
+            {
+              icon: <HardHat className="w-7 h-7" />,
+              title: "Onsite Export Packing",
+              desc: "Our team travels to client facilities to package and prepare bulky or difficult-to-move equipment for shipment."
+            },
+            {
+              icon: <Building2 className="w-7 h-7" />,
+              title: "Facilities & Warehouse Management",
+              desc: "Our Houston facility combines export packing, secure storage, and warehouse management in one reliable operation."
+            }
+          ].map((item) => (
+            <div key={item.title} className="bg-zinc-900 border border-zinc-800 p-8 hover:border-morris-red/40 transition-colors">
+              <div className="w-14 h-14 bg-zinc-950 border border-zinc-800 flex items-center justify-center text-morris-red mb-6">
+                {item.icon}
+              </div>
+              <h3 className="text-xl font-black uppercase tracking-tight text-white mb-3">{item.title}</h3>
+              <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </SectionLayout>
+
+      <SectionLayout title="Reliable Export Packing, Freight Shipping & Warehouse Management" subtitle="Why Morris Export Services">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+          <div className="bg-zinc-950 border border-zinc-800 p-8 md:p-10">
+            <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+              Our goal is to support manufacturers and industrial companies that need a dependable partner for international shipping, export preparation, and secure storage. We work closely with each client to develop tailored solutions that meet their schedule, budget, and compliance needs.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {['Custom Solutions', 'Global Reach', 'Responsive Support', 'Operational Excellence'].map((tag) => (
+                <span key={tag} className="px-4 py-2 border border-zinc-700 bg-zinc-900 text-sm font-bold uppercase tracking-wider text-zinc-300">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-zinc-900 border border-zinc-800 p-8 md:p-10">
+            <div className="flex items-center gap-3 text-morris-red font-black uppercase tracking-[0.2em] text-sm mb-6">
+              <Boxes className="w-5 h-5" />
+              Built for complex cargo
+            </div>
+            <ul className="space-y-4">
+              {[
+                "Experienced professionals with state-of-the-art facilities and equipment.",
+                "Flexible support for equipment exports, project cargo, and warehouse management.",
+                "A trusted partner for safe handling, secure staging, and freight shipping coordination."
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-zinc-300 leading-relaxed">
+                  <CheckCircle2 className="w-5 h-5 text-morris-red mt-0.5 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <Link href="/services" className="mt-8 inline-flex items-center gap-2 bg-morris-red hover:bg-red-700 text-white px-6 py-3 font-black uppercase tracking-widest text-sm transition-colors">
+              Explore Capabilities <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </SectionLayout>
+
       <SectionLayout title="Core Operations" subtitle="Our Services">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <ServiceCard 

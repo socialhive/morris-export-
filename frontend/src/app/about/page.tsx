@@ -44,6 +44,40 @@ export default function About() {
         </div>
       </SectionLayout>
 
+      <SectionLayout title="Craftsmanship, Experience & Technology" subtitle="Why We Lead">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 items-start">
+          <div className="bg-zinc-950 border border-zinc-800 p-8 md:p-10">
+            <p className="text-zinc-400 text-lg leading-relaxed mb-6">
+              Morris Export Services is steeped in history, dating back to our establishment in 1942. We have successfully blended old-world craftsmanship with today&apos;s modern technology to deliver the best service in the packing industry.
+            </p>
+            <p className="text-zinc-400 text-lg leading-relaxed mb-6">
+              Morris Export is able to lead industry standards by employing some of the most experienced professionals in the packing industry. With nearly 80 years of experience, we&apos;ve developed the knowledge and craftsmanship that no other packer can match.
+            </p>
+            <p className="text-zinc-400 text-lg leading-relaxed">
+              Essential to our process, we also pride ourselves on our software and technological development. Our proprietary software, designed to work with any ERP system, gives you full transparency of our packing process. We encourage full access to our shared system.
+            </p>
+          </div>
+
+          <div className="bg-zinc-900 border border-zinc-800 p-8 md:p-10">
+            <div className="text-morris-red font-black uppercase tracking-[0.2em] text-sm mb-6">
+              Software Integration
+            </div>
+            <h3 className="text-3xl font-black uppercase tracking-tighter text-white mb-6">
+              Full visibility from packing to shipment.
+            </h3>
+            <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+              Our systems provide real-time transparency and seamless coordination for customers who need confidence at every step of the process.
+            </p>
+            <a
+              href="mailto:mmoritz@morrisexport.com"
+              className="inline-flex items-center bg-morris-red hover:bg-red-700 text-white px-6 py-3 font-black uppercase tracking-widest text-sm transition-colors"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </SectionLayout>
+
       <SectionLayout dark title="Operational Scale" subtitle="Assets & Infrastructure">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-zinc-800 border border-zinc-800">
           <div className="bg-zinc-900 p-10">
