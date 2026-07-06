@@ -73,34 +73,37 @@ export default function Home() {
 
       <SectionLayout dark title="U.S. Customs BONDED Warehouse & Trucking" subtitle="Premium Compliance & Control Solutions">
         <div className="border-2 border-morris-red bg-gradient-to-br from-zinc-900 to-zinc-950 p-8 md:p-12">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12 mb-8">
-            <div className="flex items-center gap-4 shrink-0">
-              <div className="w-24 h-24 border-2 border-morris-red bg-zinc-950 p-2 flex items-center justify-center">
+          <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
+            <div className="lg:w-1/4 flex items-start justify-center">
+              <div className="w-full max-w-[240px] rounded-3xl border-2 border-morris-red bg-zinc-950 p-4">
                 <Image
-                  src="/images/morris logo no bg header.png"
-                  alt="Morris Export logo"
-                  width={88}
-                  height={88}
+                  src="/images/bonded.png"
+                  alt="Bonded warehouse"
+                  width={240}
+                  height={240}
                   className="object-contain"
                 />
               </div>
-              <p className="text-sm md:text-base text-white font-black uppercase tracking-wide max-w-md leading-relaxed">
-                Morris Export is a trusted U.S. Customs BONDED warehouse with private bonded trucking
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-              <div className="border border-morris-red/50 bg-zinc-950 p-5 hover:bg-zinc-900 transition-colors">
-                <h3 className="text-morris-red font-black uppercase tracking-wide text-sm mb-2">Customs Supervision</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">Cargo can be stored under U.S. Customs control with documented chain-of-custody and compliance workflows.</p>
-              </div>
-              <div className="border border-morris-red/50 bg-zinc-950 p-5 hover:bg-zinc-900 transition-colors">
-                <h3 className="text-morris-red font-black uppercase tracking-wide text-sm mb-2">Bonded Trucking</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">Private fleet for bonded transport under Customs supervision, enabling seamless material movement in compliant status.</p>
-              </div>
-              <div className="border border-morris-red/50 bg-zinc-950 p-5 hover:bg-zinc-900 transition-colors">
-                <h3 className="text-morris-red font-black uppercase tracking-wide text-sm mb-2">Duty Deferral & Storage</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">Import duties deferred while freight remains in bonded status, with secure climate-controlled staging areas.</p>
+            <div className="lg:w-3/4">
+              <p className="text-sm md:text-base text-white font-black uppercase tracking-wide max-w-3xl leading-relaxed mb-8">
+                Morris Export is a trusted U.S. Customs BONDED warehouse with private bonded trucking.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="border border-morris-red/50 bg-zinc-950 p-8 hover:bg-zinc-900 transition-colors">
+                  <h3 className="text-morris-red font-black uppercase tracking-wide text-sm mb-3">Customs Supervision</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">Cargo can be stored under U.S. Customs control with documented chain-of-custody and compliance workflows.</p>
+                </div>
+                <div className="border border-morris-red/50 bg-zinc-950 p-8 hover:bg-zinc-900 transition-colors">
+                  <h3 className="text-morris-red font-black uppercase tracking-wide text-sm mb-3">Bonded Trucking</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">Private fleet for bonded transport under Customs supervision, enabling seamless material movement in compliant status.</p>
+                </div>
+                <div className="border border-morris-red/50 bg-zinc-950 p-8 hover:bg-zinc-900 transition-colors">
+                  <h3 className="text-morris-red font-black uppercase tracking-wide text-sm mb-3">Duty Deferral & Storage</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">Import duties deferred while freight remains in bonded status, with secure climate-controlled staging areas.</p>
+                </div>
               </div>
             </div>
           </div>

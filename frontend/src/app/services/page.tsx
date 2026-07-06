@@ -1,39 +1,9 @@
 import SectionLayout from "@/components/SectionLayout";
 import ServiceCard from "@/components/ServiceCard";
-import Image from "next/image";
+import { serviceCategories } from "./services-data";
 
 export default function Services() {
-  const categories = [
-    {
-      title: "Packing & Crating",
-      description: "Industrial strength export packing.",
-      services: [
-        { title: "Custom Wooden Crating", desc: "Engineered specs for any dimension.", img: "/images/crating/customcrating.webp" },
-        { title: "Vapor Barrier & Shrinkwrap", desc: "Plastics protection against moisture and salt.", img: "/images/vinyl wrap protection/vinylwrap2.webp" },
-        { title: "Onsite Packing", desc: "We deploy our crews to your facility.", img: "/images/onsitepacking/onsitepacking3.webp" },
-        { title: "Packing & Preservation", desc: "Protective materials and cushioning for delicate cargo.", img: "/images/onsitepacking/onsitepacking3.webp" }
-      ]
-    },
-    {
-      title: "Logistics & Operations",
-      description: "Movement of massive assets.",
-      services: [
-        { title: "Containerization", desc: "Flat racks, open tops, and standard boxes.", img: "/images/containerization/container1.webp" },
-        { title: "Heavy Lift & Transloading", desc: "140K lbs lift capacity on site.", img: "/images/crane/crane.webp" },
-        { title: "Drayage & Trucking", desc: "Private fleet for heavy haul.", img: "/images/trucking/trucking2.webp" },
-        { title: "Flat Rack Securing", desc: "Specialized lashing and securing for flat racks.", img: "/images/containerization/container1.webp" }
-      ]
-    },
-    {
-      title: "Warehousing",
-      description: "Secure staging and storage.",
-      services: [
-        { title: "Bonded Storage", desc: "Customs compliant staging areas.", img: "/images/facilitiesstorage/Secure Facilities1.webp" },
-        { title: "Inventory Management", desc: "Digital tracking and reporting.", img: "/images/warehousemanagement/warehousepackaging2.webp" },
-        { title: "Facility Relocation", desc: "Turnkey factory moves.", img: "/images/facilityrelocation/facilityrelocation].webp" }
-      ]
-    }
-  ];
+  const categories = serviceCategories;
 
   return (
     <>
@@ -53,9 +23,9 @@ export default function Services() {
               <ServiceCard 
                 key={i}
                 title={svc.title}
-                description={svc.desc}
-                image={svc.img}
-                link={`/services/${svc.title.toLowerCase().replace(/ /g, '-')}`}
+                description={svc.description}
+                image={svc.image}
+                link={`/services/${svc.slug}`}
               />
             ))}
           </div>
