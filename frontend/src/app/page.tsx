@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
 import ServiceCard from "@/components/ServiceCard";
-import { ShieldCheck, Anchor, Truck, Warehouse, CheckCircle2, ArrowRight, PackageCheck, Boxes, HardHat, Building2, BadgeCheck, MoveRight } from "lucide-react";
+import { ShieldCheck, Anchor, Truck, Warehouse, CheckCircle2, ArrowRight, PackageCheck, Boxes, HardHat, Building2, BadgeCheck, MoveRight, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Home() {
   return (
@@ -66,6 +66,32 @@ export default function Home() {
             <div className="bg-zinc-950 p-6 w-48">
               <div className="text-4xl font-black text-white mb-1">24/7</div>
               <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">Operational Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-zinc-900 bg-zinc-950/90">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+          <div className="rounded-3xl border border-morris-red/30 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 p-6 md:p-8 shadow-2xl">
+            <div className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-6">
+              <div className="max-w-2xl">
+                <div className="text-morris-red font-black uppercase tracking-[0.25em] text-xs mb-3">Visit Our Houston Facility</div>
+                <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white mb-3">1225 McCarty Street, Houston, TX 77029</h2>
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+                  From bonded warehousing and export packing to heavy-haul support, our Houston headquarters is positioned to serve complex industrial logistics needs.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href="tel:+17136759101" className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-700 bg-zinc-950 px-5 py-3 text-sm font-black uppercase tracking-widest text-white hover:border-morris-red hover:text-morris-red transition-colors">
+                  <Phone className="w-4 h-4" />
+                  713-675-9101
+                </a>
+                <a href="mailto:sales@morrisexport.com" className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-700 bg-zinc-950 px-5 py-3 text-sm font-black uppercase tracking-widest text-white hover:border-morris-blue hover:text-morris-blue transition-colors">
+                  <Mail className="w-4 h-4" />
+                  sales@morrisexport.com
+                </a>
+              </div>
             </div>
           </div>
         </div>

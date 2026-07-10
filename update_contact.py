@@ -38,7 +38,9 @@ if start_idx != -1 and end_idx != -1:
                                             </div>
                                             <div>
                                                 <h4 class="font-bold text-xl mb-2 text-zinc-900">Main Office</h4>
-                                                <p class="text-zinc-600 text-lg">8300 Market St<br>Houston, TX 77029</p>
+                                                <a href="https://www.google.com/maps/search/1225+McCarty+Street,+77029?entry=gmail&source=g" target="_blank" rel="noopener noreferrer" class="text-zinc-600 text-lg hover:text-morris-blue transition-colors">
+                                                    1225 McCarty Street<br>Houston, TX 77029
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="flex items-start space-x-6 group">
@@ -47,7 +49,7 @@ if start_idx != -1 and end_idx != -1:
                                             </div>
                                             <div>
                                                 <h4 class="font-bold text-xl mb-2 text-zinc-900">Phone</h4>
-                                                <a href="tel:7136721635" class="text-zinc-600 text-lg hover:text-morris-red transition-colors">(713) 672-1635</a>
+                                                <a href="tel:+17136759101" class="text-zinc-600 text-lg hover:text-morris-red transition-colors">713-675-9101</a>
                                             </div>
                                         </div>
                                         <div class="flex items-start space-x-6 group">
@@ -56,7 +58,7 @@ if start_idx != -1 and end_idx != -1:
                                             </div>
                                             <div>
                                                 <h4 class="font-bold text-xl mb-2 text-zinc-900">Email</h4>
-                                                <a href="mailto:info@morris-export.com" class="text-zinc-600 text-lg hover:text-morris-blue transition-colors">info@morris-export.com</a>
+                                                <a href="mailto:sales@morrisexport.com" class="text-zinc-600 text-lg hover:text-morris-blue transition-colors">sales@morrisexport.com</a>
                                             </div>
                                         </div>
                                     </div>

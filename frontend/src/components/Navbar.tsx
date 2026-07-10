@@ -20,6 +20,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Services", path: "/services" },
     { name: "Success Stories", path: "/success-stories" },
+    { name: "FAQ", path: "/faq" },
     { name: "About & History", path: "/about" },
     { name: "Customer Hub", path: "/hub" },
   ];

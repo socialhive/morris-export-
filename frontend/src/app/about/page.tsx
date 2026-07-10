@@ -62,7 +62,7 @@ export default function About() {
               Our systems provide real-time transparency and seamless coordination for customers who need confidence at every step of the process.
             </p>
             <a
-              href="mailto:mmoritz@morrisexport.com"
+              href="mailto:sales@morrisexport.com"
               className="inline-flex items-center bg-morris-red hover:bg-red-700 text-white px-6 py-3 font-black uppercase tracking-widest text-sm transition-colors"
             >
               Contact Us

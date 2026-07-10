@@ -78,11 +78,11 @@ new_foot = '''<!-- Footer -->
             Your partner in global industrial transportation.
           </p>
           <div class="flex space-x-6">
-            <a href="tel:7136721635" class="flex items-center space-x-3 text-zinc-400 hover:text-morris-blue transition-colors group">
+            <a href="tel:+17136759101" class="flex items-center space-x-3 text-zinc-400 hover:text-morris-blue transition-colors group">
               <div class="w-10 h-10 bg-zinc-900 rounded-full flex items-center justify-center group-hover:bg-blue-900/30">
                 <i data-lucide="phone" class="w-4 h-4"></i>
               </div>
-              <span class="font-medium">(713) 672-1635</span>
+              <span class="font-medium">713-675-9101</span>
             </a>
           </div>
         </div>
