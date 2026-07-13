@@ -1,10 +1,43 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
 import ServiceCard from "@/components/ServiceCard";
-import { ShieldCheck, Anchor, Truck, Warehouse, CheckCircle2, ArrowRight, PackageCheck, Boxes, HardHat, Building2, BadgeCheck, MoveRight, MapPin, Phone, Mail } from "lucide-react";
+import { ShieldCheck, Anchor, Truck, Warehouse, CheckCircle2, ArrowRight, PackageCheck, Boxes, HardHat, Building2, BadgeCheck, MoveRight, MapPin, Phone, Mail, Search } from "lucide-react";
+
+const featuredServices = [
+  {
+    title: "Export Packing & Crating",
+    description: "Custom engineered wooden crates and protective export packaging for heavy industrial and mission-critical cargo.",
+    image: "/images/crating/customcrating.webp",
+    link: "/services#crating"
+  },
+  {
+    title: "Heavy Lift & Transloading",
+    description: "Specialized lifting, securing, and transloading support for oversized machinery and project cargo.",
+    image: "/images/crane/img1-1.jpg.webp",
+    link: "/services#heavy"
+  },
+  {
+    title: "Warehousing & Storage",
+    description: "Secure storage, bonded staging, and warehouse management for short- and long-term logistics needs.",
+    image: "/images/facilitiesstorage/Secure%20Facilities.webp",
+    link: "/services#warehousing"
+  }
+];
 
 export default function Home() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredServices = featuredServices.filter((service) => {
+    const term = searchTerm.toLowerCase();
+    return (
+      service.title.toLowerCase().includes(term) ||
+      service.description.toLowerCase().includes(term)
+    );
+  });
   return (
     <>
       {/* Hero Section */}
@@ -274,26 +307,44 @@ export default function Home() {
         </div>
       </SectionLayout>
 
-      <SectionLayout title="Core Operations" subtitle="Our Services">
+      <SectionLayout title="Featured Services" subtitle="Search our core capabilities">
+        <div className="mb-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+          <div className="max-w-2xl">
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
+              Explore the services most often requested by manufacturers, energy operators, and global shippers. Use the search bar to quickly find the right solution for your cargo.
+            </p>
+          </div>
+          <label className="w-full lg:max-w-md">
+            <span className="sr-only">Search services</span>
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-500" />
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
+                placeholder="Search services"
+                className="w-full rounded-full border border-zinc-700 bg-zinc-950 py-3 pl-11 pr-4 text-sm text-white placeholder:text-zinc-500 focus:border-morris-red focus:outline-none"
+              />
+            </div>
+          </label>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <ServiceCard 
-            title="Export Packing & Crating"
-            description="Custom engineered wooden crates, vapor barrier packaging, and ISPM-15 certified materials for global compliance."
-            image="/images/crating/customcrating.webp"
-            link="/services#crating"
-          />
-          <ServiceCard 
-            title="Heavy Assets & Breakbulk"
-            description="Specialized lifting, securing, and transloading of oversized industrial machinery and energy infrastructure."
-            image="/images/crane/img1-1.jpg.webp"
-            link="/services#heavy"
-          />
-          <ServiceCard 
-            title="Warehousing & Storage"
-            description="Short and long-term secure storage, inventory management, and staging for complex project cargo."
-            image="/images/facilitiesstorage/Secure Facilities.webp"
-            link="/services#warehousing"
-          />
+          {filteredServices.length > 0 ? (
+            filteredServices.map((service) => (
+              <ServiceCard
+                key={service.title}
+                title={service.title}
+                description={service.description}
+                image={service.image}
+                link={service.link}
+              />
+            ))
+          ) : (
+            <div className="md:col-span-3 rounded-2xl border border-zinc-800 bg-zinc-950 p-8 text-center text-zinc-400">
+              No matching services found. Try a broader term such as packing, storage, or heavy lift.
+            </div>
+          )}
         </div>
         <div className="mt-12 text-center">
           <Link href="/services" className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-white hover:text-morris-blue transition-colors">
