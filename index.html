@@ -76,37 +76,90 @@
     .service-tile {
       position: relative;
       overflow: hidden;
-      aspect-ratio: 16 / 9;
+      display: flex;
+      flex-direction: column;
     }
 
-    .service-tile img {
-      transition: transform 0.5s ease;
-    }
-
-    .service-tile:hover img {
-      transform: scale(1.1);
-    }
-
-    .service-tile .overlay {
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
-    }
-
-    /* Ensure service title pill is visible above images */
-    .service-tile .title-pill {
+    .service-tile .tile-img-wrap {
       position: relative;
-      z-index: 30;
-      background: rgba(0,0,0,0.65);
-      padding: 10px 14px;
-      border-radius: 9999px;
-      display: inline-flex;
-      align-items: center;
+      height: 180px;
+      overflow: hidden;
+      flex-shrink: 0;
     }
 
-    .service-tile .title-pill h3 {
-      color: #fff;
+    @media (min-width: 768px) {
+      .service-tile .tile-img-wrap { height: 210px; }
+    }
+
+    .service-tile .tile-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .service-tile:hover .tile-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .service-tile .tile-label {
+      background: #fff;
+      padding: 14px 18px 16px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 2px solid #e4e7ec;
+      transition: border-color 0.25s, background 0.25s;
+    }
+
+    .service-tile:hover .tile-label {
+      border-top-color: var(--morris-blue, #1d4ed8);
+      background: #f0f5ff;
+    }
+
+    .service-tile .tile-label-text {}
+
+    .service-tile .tile-category {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--morris-blue, #1d4ed8);
+      margin-bottom: 3px;
+    }
+
+    .service-tile .tile-title {
+      font-size: 15px;
       font-weight: 800;
+      color: #0f172a;
       margin: 0;
-      line-height: 1;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .service-tile .tile-arrow {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: #e8eef8;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .service-tile:hover .tile-arrow {
+      background: var(--morris-blue, #1d4ed8);
+      transform: translateX(3px);
+    }
+
+    .service-tile .tile-arrow svg {
+      width: 14px; height: 14px;
+      stroke: var(--morris-blue, #1d4ed8);
+      transition: stroke 0.25s;
+    }
+
+    .service-tile:hover .tile-arrow svg {
+      stroke: #fff;
     }
 
     /* Search results dropdown */
@@ -1199,14 +1252,17 @@
     // Templates
     function renderHome() {
         const servicesGridHtml = SERVICES.map(s => `
-            <a href="#/services/${s.slug}" class="service-tile group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white border border-white/20">
-              <div class="relative h-48 md:h-64 overflow-hidden">
-                <img src="${s.coverImg}" alt="${s.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
-                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.15) 45%, transparent 100%);"></div>
-                <div class="absolute bottom-4 left-6 right-6 flex items-end">
-                  <div class="title-pill" style="position:relative;z-index:9999;background:rgba(0,0,0,0.85);padding:10px 14px;border-radius:9999px;display:inline-flex;align-items:center;">
-                    <h3 style="color:#ffffff;font-weight:800;margin:0;line-height:1;font-size:16px;letter-spacing:0.02em">${s.title}</h3>
-                  </div>
+            <a href="#/services/${s.slug}" class="service-tile group rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-zinc-200">
+              <div class="tile-img-wrap rounded-t-2xl">
+                <img src="${s.coverImg}" alt="${s.title}" loading="lazy" decoding="async">
+              </div>
+              <div class="tile-label rounded-b-2xl">
+                <div class="tile-label-text">
+                  <div class="tile-category">${s.category}</div>
+                  <h3 class="tile-title">${s.title}</h3>
+                </div>
+                <div class="tile-arrow">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
                 </div>
               </div>
             </a>
