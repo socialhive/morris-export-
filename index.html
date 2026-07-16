@@ -91,6 +91,32 @@
       background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
     }
 
+    /* Ensure service title pill is visible above images */
+    .service-tile .title-pill {
+      position: relative;
+      z-index: 30;
+      background: rgba(0,0,0,0.65);
+      padding: 10px 14px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .service-tile .title-pill h3 {
+      color: #fff;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1;
+    }
+
+    /* Search results dropdown */
+    #site-search-results { position:absolute; left:0; right:0; margin-top:10px; background:#fff; color:#111; border-radius:12px; box-shadow:0 10px 30px rgba(2,6,23,0.2); max-height:360px; overflow:auto; z-index:60; display:none; }
+    #site-search-results .result { padding:12px 14px; border-bottom:1px solid #eef2f6; display:flex; gap:10px; align-items:flex-start; }
+    #site-search-results .result:last-child { border-bottom:none; }
+    #site-search-results .result .meta { font-size:12px; color:#6b7280; }
+    #site-search-results .result a { text-decoration:none; color:#0f172a; font-weight:700; }
+    #site-search-input { width:100%; padding:12px 16px; border-radius:9999px; border:1px solid rgba(15,23,42,0.08); }
+
     /* Mega Menu */
     .mega-menu {
       position: absolute;
@@ -254,10 +280,18 @@
     nav {
       height: 96px;
     }
+    /* Improved header link visuals */
+    #nav-links { display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:nowrap; overflow:visible; }
+    #nav-links a { color: rgba(226,228,232,0.95); padding:6px 8px; border-radius:6px; font-weight:600; letter-spacing:0.01em; font-size:13px; text-transform:none; text-decoration:none; display:inline-block; white-space:nowrap; }
+    #nav-links a:hover { background: rgba(255,255,255,0.03); color: #fff; }
+    #nav-links a.active { color: #fff; position:relative; }
+    #nav-links a.active::after { content:''; position:absolute; left:8px; right:8px; bottom:-8px; height:3px; border-radius:3px; background: linear-gradient(90deg,var(--morris-blue),var(--morris-red)); }
   </style>
 </head>
 
 <body class="antialiased text-zinc-300 bg-zinc-950">
+
+  
 
   <!-- Navbar -->
   <nav class="fixed w-full z-50 bg-zinc-950/90 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 modern-nav">
@@ -330,6 +364,7 @@
             <li><a href="#/about-us" class="hover:text-morris-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-morris-blue"></i> About Us</a></li>
             <li><a href="#/services" class="hover:text-morris-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-morris-blue"></i> Services</a></li>
             <li><a href="#/facilities" class="hover:text-morris-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-morris-blue"></i> Facilities</a></li>
+            <li><a href="#/bonded" class="hover:text-morris-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-morris-blue"></i> Bonded Services</a></li>
             <li><a href="#/contact-us" class="hover:text-morris-blue transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-morris-blue"></i> Contact</a></li>
           </ul>
         </div>
@@ -843,6 +878,42 @@
         keyBenefits: ['IMO/CTU Compliant', 'Lashing Certificates', 'Custom Blocking Plans', 'Port of Houston Access', 'Surveyor Coordination', 'OOG All Dimensions']
       },
       {
+        id: 'bumper-rings',
+        title: 'Bumper Rings',
+        slug: 'bumper-rings',
+        icon: 'circle',
+        coverImg: 'images/pipeprotection/pipeprotection1.webp',
+        heroImg: 'images/pipeprotection/pipeprotection&bolsters.webp',
+        category: 'Packing & Crating',
+        description: 'Custom-fabricated bumper rings for tubular and cylindrical cargo protection during export.',
+        content: 'Morris Export Services fabricates and installs high-strength bumper rings designed to protect the ends of tubular, cylindrical, and pipe cargo during handling, stacking, and ocean transit. Our bumper rings prevent end-face damage, reduce thread wear, and provide a stable base for bundle stacking.',
+        features: ['Custom-fabricated to pipe OD specs', 'Heavy-gauge steel or timber construction', 'Prevent end-face and thread damage'],
+        longDescription: [
+          'Bumper rings are an essential protective component for tubular and cylindrical cargo — particularly OCTG pipe, casing, and large-bore pressure vessels — where end-face damage or thread deformation during handling can render individual pieces unacceptable for use. Morris Export Services designs and fabricates bumper rings to exact outer-diameter specifications, ensuring a precise fit for every cargo profile.',
+          'Our bumper rings are constructed from heavy-gauge structural steel or treated timber depending on the application, cargo weight, and stacking requirements. Each ring is engineered to absorb impact loads at the ends of the cargo during forklift moves, crane picks, and vessel loading sequences — protecting the highest-value surfaces of your tubular goods throughout the logistics chain.',
+          'Bumper rings integrate seamlessly with our pipe protection and bolster systems, and are included as part of our comprehensive OCTG and tubular cargo protection packages. We maintain standard inventory for common pipe OD ranges and fabricate custom sizes on short notice to meet project schedules.'
+        ],
+        stats: [
+          { value: 'Custom Fab', label: 'Any OD Specification' },
+          { value: 'Steel & Timber', label: 'Construction Options' },
+          { value: 'API Aligned', label: 'OCTG Handling Standards' }
+        ],
+        process: [
+          { step: '01', title: 'Cargo Specification Review', desc: 'We collect pipe OD, wall thickness, connection type, and bundle configuration to design the correct bumper ring dimensions and material.' },
+          { step: '02', title: 'Fabrication', desc: 'Bumper rings are cut, formed, and finished in our on-site shop to the exact specification. Standard sizes ship same-day from inventory.' },
+          { step: '03', title: 'Installation & Securing', desc: 'Rings are installed at both ends of each pipe joint or bundle, secured with banding or fasteners appropriate to the cargo and transport mode.' },
+          { step: '04', title: 'Documentation', desc: 'Installation is recorded in the shipment packing list with photos and material certifications provided for export compliance files.' }
+        ],
+        faqs: [
+          { q: 'What pipe sizes do your bumper rings accommodate?', a: 'We fabricate bumper rings for pipe ODs ranging from small-bore tubing through large-bore casing and conductor pipe. Custom ODs are available — contact us with your specification.' },
+          { q: 'Are bumper rings reusable?', a: 'Steel bumper rings are designed for multiple uses and can be returned, cleaned, and stored at our facility between shipments as part of a client-owned ring management program.' },
+          { q: 'Can bumper rings be combined with your other pipe protection services?', a: 'Yes. Bumper rings are routinely used alongside our VCI wrap, thread protectors, and bolster systems as part of a complete OCTG export protection package.' },
+          { q: 'Do you supply bumper rings for on-site application at our yard?', a: 'Yes. We can deliver and install bumper rings at your facility or pipe yard, with our mobile team handling the full installation and documentation.' }
+        ],
+        industries: ['Oil & Gas E&P', 'OCTG Distributors', 'Drilling Contractors', 'Pipeline Operators', 'Energy EPC Firms'],
+        keyBenefits: ['Custom OD Fabrication', 'End-Face Protection', 'Thread Damage Prevention', 'Steel & Timber Options', 'Reusable Rings', 'Mobile Installation']
+      },
+      {
         id: 'fumigation-washing',
         title: 'Fumigation & Washing Services',
         slug: 'fumigation-washing',
@@ -881,7 +952,11 @@
     ];
 
     const navLinks = [
+      { name: 'Home', path: '#/' },
       { name: 'Services', path: '#/services' },
+      { name: 'Facilities', path: '#/facilities' },
+      { name: 'Bonded Services', path: '#/bonded' },
+      { name: 'Contact', path: '#/contact-us' },
       { name: 'Success Stories', path: '#/success-stories' },
       { name: 'About & History', path: '#/about-us' },
       { name: 'Customer Hub', path: '#/customer-center' }
@@ -897,6 +972,8 @@
 
       if (hash === '#/') {
         content.innerHTML = renderHome();
+      } else if (hash === '#/bonded') {
+        content.innerHTML = renderBonded();
       } else if (hash === '#/success-stories') { content.innerHTML = renderSuccessStories(); } else if (hash === '#/about-us') {
         content.innerHTML = renderAbout();
       } else if (hash === '#/services') {
@@ -927,6 +1004,8 @@
       updateNavActiveStates(hash);
       lucide.createIcons();
       applyModernEnhancements();
+      // initialize search handlers for homepage
+      try { attachSearchHandlers(); } catch (e) { /* ignore if not present */ }
     }
 
     let revealObserver;
@@ -971,34 +1050,167 @@
       navTargets.forEach((el) => el.classList.add('nav-modern'));
     }
 
+    /* --- Client-side site search (indexes SERVICES + core pages) --- */
+    const SEARCH_INDEX = [];
+    function buildSearchIndex() {
+      SEARCH_INDEX.length = 0;
+      SERVICES.forEach(s => {
+        SEARCH_INDEX.push({
+          type: 'service',
+          title: s.title,
+          desc: s.description || '',
+          content: (s.longDescription || []).join(' '),
+          link: '#/services/' + s.slug
+        });
+      });
+      const staticPages = [
+        { title: 'Home', link: '#/' , desc: 'Main landing page'},
+        { title: 'About Us', link: '#/about-us', desc: 'Company history and mission' },
+        { title: 'Services', link: '#/services', desc: 'All services overview' },
+        { title: 'Facilities', link: '#/facilities', desc: 'Our warehouse and facilities' },
+        { title: 'Bonded Services', link: '#/bonded', desc: 'Bonded storage and bonded trucking' },
+        { title: 'FAQ', link: '#/faq', desc: 'Frequently asked questions' },
+        { title: 'Contact', link: '#/contact-us', desc: 'Contact Morris Export' },
+        { title: 'Success Stories', link: '#/success-stories', desc: 'Case studies and projects' }
+      ];
+      staticPages.forEach(p => SEARCH_INDEX.push({ type: 'page', title: p.title, desc: p.desc || '', content: '', link: p.link }));
+    }
+
+    function searchSite(query) {
+      if (!query) return [];
+      const term = query.toLowerCase();
+      return SEARCH_INDEX.map(item => {
+        let score = 0;
+        if (item.title && item.title.toLowerCase().includes(term)) score += 10;
+        if (item.desc && item.desc.toLowerCase().includes(term)) score += 5;
+        if (item.content && item.content.toLowerCase().includes(term)) score += 2;
+        return score > 0 ? { ...item, score } : null;
+      }).filter(Boolean).sort((a, b) => b.score - a.score).slice(0, 20);
+    }
+
+    function renderSearchResults(results) {
+      const container = document.getElementById('site-search-results');
+      if (!container) return;
+      if (!results || results.length === 0) {
+        container.innerHTML = '<div class="result"><div style="font-weight:600;padding:12px 14px">No results found</div></div>';
+        container.style.display = 'block';
+        return;
+      }
+      container.innerHTML = results.map(r => `
+        <div class="result">
+          <div style="flex:1">
+            <a href="${r.link}">${r.title}</a>
+            <div class="meta">${(r.desc || '').slice(0, 140)}</div>
+          </div>
+        </div>
+      `).join('');
+      container.style.display = 'block';
+      Array.from(container.querySelectorAll('a')).forEach(a => a.addEventListener('click', () => { container.style.display = 'none'; }));
+    }
+
+    function attachSearchHandlers() {
+      if (window._searchAttached) return;
+      window._searchAttached = true;
+      buildSearchIndex();
+      const input = document.getElementById('site-search-input');
+      const results = document.getElementById('site-search-results');
+      console.log('attachSearchHandlers running, input=', !!input, 'results=', !!results);
+      if (!input || !results) return;
+      input.addEventListener('input', (e) => {
+        const q = (e.target.value || '').trim();
+        if (!q) { results.style.display = 'none'; return; }
+        const res = searchSite(q);
+        renderSearchResults(res);
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const first = results.querySelector('a');
+          if (first) {
+            window.location.hash = first.getAttribute('href');
+            results.style.display = 'none';
+          }
+        }
+        if (e.key === 'Escape') results.style.display = 'none';
+      });
+      document.addEventListener('click', (ev) => {
+        if (!ev.target.closest || (!ev.target.closest('#site-search-input') && !ev.target.closest('#site-search-results'))) {
+          if (results) results.style.display = 'none';
+        }
+      });
+    }
+
+    // Ensure bindings even if attachSearchHandlers missed the element
+    function ensureSearchBindings() {
+      const input = document.getElementById('site-search-input');
+      const results = document.getElementById('site-search-results');
+      if (input && results) {
+        try { attachSearchHandlers(); }
+        catch (e) { console.error('attachSearchHandlers failed in ensure:', e); }
+        return true;
+      }
+      return false;
+    }
+
+    // Observe #content for additions and attempt to attach handlers when search input appears
+    (function observeContentForSearch(){
+      const root = document.getElementById('content');
+      if (!root) return;
+      const mo = new MutationObserver((mutations) => {
+        if (ensureSearchBindings()) {
+          mo.disconnect();
+        }
+      });
+      mo.observe(root, { childList: true, subtree: true });
+      // initial attempt
+      ensureSearchBindings();
+    })();
+
+    // Document-level delegation fallback so typing still triggers search
+    document.addEventListener('input', (e) => {
+      try {
+        if (!e.target) return;
+        const id = e.target.id || '';
+        if (id === 'site-search-input') {
+          const q = (e.target.value || '').trim();
+          const results = document.getElementById('site-search-results');
+          if (!results) return;
+          if (!q) { results.style.display = 'none'; return; }
+          const res = searchSite(q);
+          renderSearchResults(res);
+        }
+      } catch (err) { console.error('delegated search input error', err); }
+    });
+
     function updateNavActiveStates(hash) {
-      const links = document.querySelectorAll('#nav-links a, #mobile-nav-links a');
+      const links = document.querySelectorAll('#nav-links a');
       links.forEach(link => {
         const path = link.getAttribute('href');
-        if (path === hash || (hash.startsWith('#/services/') && path === '#/services')) {
-          link.classList.add('text-blue-600');
-          link.classList.remove('text-zinc-600');
-        } else {
-          link.classList.remove('text-blue-600');
-          link.classList.add('text-zinc-600');
-        }
+        const isActive = (path === hash) || (hash.startsWith('#/services/') && path === '#/services');
+        link.classList.toggle('active', isActive);
+      });
+      const mobileLinks = document.querySelectorAll('#mobile-nav-links a');
+      mobileLinks.forEach(link => {
+        const path = link.getAttribute('href');
+        const isActive = (path === hash) || (hash.startsWith('#/services/') && path === '#/services');
+        link.classList.toggle('text-white', isActive);
       });
     }
 
     // Templates
     function renderHome() {
-      const servicesGridHtml = SERVICES.map(s => `
-                <a href="#/services/${s.slug}" class="service-tile group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white border border-white/20">
-                    <div class="relative h-48 md:h-64 overflow-hidden">
-                        <img src="${s.coverImg}" alt="${s.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                        <div class="absolute bottom-4 left-6 right-6">
-                            <h3 class="text-white font-black text-xl tracking-tight mb-1">${s.title}</h3>
-                            <div class="w-12 h-1 bg-morris-red transform origin-left transition-all duration-300 group-hover:w-full"></div>
-                        </div>
-                    </div>
-                </a>
-            `).join('');
+        const servicesGridHtml = SERVICES.map(s => `
+            <a href="#/services/${s.slug}" class="service-tile group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white border border-white/20">
+              <div class="relative h-48 md:h-64 overflow-hidden">
+                <img src="${s.coverImg}" alt="${s.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
+                <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.15) 45%, transparent 100%);"></div>
+                <div class="absolute bottom-4 left-6 right-6 flex items-end">
+                  <div class="title-pill" style="position:relative;z-index:9999;background:rgba(0,0,0,0.85);padding:10px 14px;border-radius:9999px;display:inline-flex;align-items:center;">
+                    <h3 style="color:#ffffff;font-weight:800;margin:0;line-height:1;font-size:16px;letter-spacing:0.02em">${s.title}</h3>
+                  </div>
+                </div>
+              </div>
+            </a>
+          `).join('');
 
       return `
                 <div class="pt-20">
@@ -1020,6 +1232,14 @@
                                 <div class="flex flex-col sm:flex-row gap-4">
                                     <a href="#/services" class="btn-modern bg-morris-red text-white py-4 px-8 rounded-xl font-bold uppercase tracking-widest text-center hover:bg-red-700 transition-colors shadow-lg shadow-red-900/50">Explore Services</a>
                                     <a href="#/contact-us" class="btn-modern bg-white/10 backdrop-blur-md border border-white/20 text-white py-4 px-8 rounded-xl font-bold uppercase tracking-widest text-center hover:bg-white/20 transition-colors">Get a Quote</a>
+                                </div>
+                                <div class="mt-8">
+                                  <div class="max-w-md">
+                                      <div class="relative">
+                                      <input id="site-search-input" type="search" placeholder="Search the site (services, pages, FAQ)..." aria-label="Search the site" />
+                                      <div id="site-search-results" role="listbox" aria-expanded="false"></div>
+                                    </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -1590,7 +1810,8 @@ function renderServiceDetail(slug) {
     function renderFacilities() {
       return `
                 <div class="pt-20">
-                    <section class="relative h-[40vh] flex items-center overflow-hidden">
+                    <!-- Hero -->
+                    <section class="relative h-[50vh] flex items-center overflow-hidden">
                         <div class="absolute inset-0 z-0">
                             <img src="images/facilitiesstorage/Secure Facilities.webp" class="w-full h-full object-cover" alt="Facility Background" loading="lazy" decoding="async">
                             <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent"></div>
@@ -1598,11 +1819,36 @@ function renderServiceDetail(slug) {
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-10">
                             <h1 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4 drop-shadow-lg">Our Facilities</h1>
                             <div class="w-24 h-1.5 bg-morris-red mb-6"></div>
-                            <h2 class="text-xl md:text-2xl font-medium text-blue-100 max-w-2xl">Strategic Storage & Warehousing Engineered for Global Transit.</h2>
+                            <h2 class="text-xl md:text-2xl font-medium text-blue-100 max-w-2xl">Strategic Storage &amp; Warehousing Engineered for Global Transit.</h2>
                         </div>
                     </section>
 
-                    <section class="py-24 bg-zinc-50 relative -mt-10 z-20 rounded-t-[3rem] shadow-2xl">
+                    <!-- Stats Bar -->
+                    <section class="bg-morris-blue py-10 relative z-30">
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-white text-center">
+                                <div>
+                                    <div class="text-4xl font-black mb-1">250K+</div>
+                                    <div class="text-sm font-bold uppercase tracking-widest text-blue-200">Sq Ft Indoor Storage</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-black mb-1">24/7</div>
+                                    <div class="text-sm font-bold uppercase tracking-widest text-blue-200">Security &amp; Monitoring</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-black mb-1">140K</div>
+                                    <div class="text-sm font-bold uppercase tracking-widest text-blue-200">Lbs Heavy-Lift Capacity</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-black mb-1">Port</div>
+                                    <div class="text-sm font-bold uppercase tracking-widest text-blue-200">Adjacent Location</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Scale & Security -->
+                    <section class="py-24 bg-zinc-50 relative z-20">
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                                 <div class="bg-white p-10 md:p-14 rounded-[2.5rem] border border-zinc-100 shadow-xl relative overflow-hidden">
@@ -1610,9 +1856,9 @@ function renderServiceDetail(slug) {
                                     <div class="w-16 h-16 bg-blue-100 text-morris-blue rounded-2xl flex items-center justify-center mb-8 shadow-sm">
                                         <i data-lucide="warehouse" class="w-8 h-8"></i>
                                     </div>
-                                    <h2 class="text-3xl font-black text-zinc-900 mb-6 uppercase tracking-tight">Scale & Security</h2>
+                                    <h2 class="text-3xl font-black text-zinc-900 mb-6 uppercase tracking-tight">Scale &amp; Security</h2>
                                     <p class="text-lg text-zinc-600 mb-8 leading-relaxed">
-                                        Our facilities offer over <strong class="text-morris-blue">250,000 square feet</strong> of indoor storage and extensive outdoor laydown areas, all secured and monitored 24/7.
+                                        Our facilities offer over <strong class="text-morris-blue">250,000 square feet</strong> of indoor storage and extensive outdoor laydown areas, all secured and monitored 24/7 — positioned minutes from the Port of Houston.
                                     </p>
                                     <ul class="space-y-5">
                                         <li class="flex items-start">
@@ -1621,11 +1867,19 @@ function renderServiceDetail(slug) {
                                         </li>
                                         <li class="flex items-start">
                                             <div class="w-6 h-6 bg-blue-100 text-morris-blue rounded-full flex items-center justify-center shrink-0 mr-4 mt-1"><i data-lucide="check" class="w-3 h-3"></i></div>
-                                            <span class="text-zinc-700 font-medium">Heavy-lift capabilities (up to 140K lbs)</span>
+                                            <span class="text-zinc-700 font-medium">Heavy-lift capabilities up to 140,000 lbs</span>
                                         </li>
                                         <li class="flex items-start">
                                             <div class="w-6 h-6 bg-blue-100 text-morris-blue rounded-full flex items-center justify-center shrink-0 mr-4 mt-1"><i data-lucide="check" class="w-3 h-3"></i></div>
                                             <span class="text-zinc-700 font-medium">Real-time inventory management via M-Pact</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <div class="w-6 h-6 bg-blue-100 text-morris-blue rounded-full flex items-center justify-center shrink-0 mr-4 mt-1"><i data-lucide="check" class="w-3 h-3"></i></div>
+                                            <span class="text-zinc-700 font-medium">U.S. Customs BONDED warehouse designation</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <div class="w-6 h-6 bg-blue-100 text-morris-blue rounded-full flex items-center justify-center shrink-0 mr-4 mt-1"><i data-lucide="check" class="w-3 h-3"></i></div>
+                                            <span class="text-zinc-700 font-medium">Secured outdoor laydown yard for large cargo</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -1642,9 +1896,163 @@ function renderServiceDetail(slug) {
                             </div>
                         </div>
                     </section>
+
+                    <!-- Climate-Controlled Storage Feature Section -->
+                    <section class="py-24 bg-white border-t border-zinc-100">
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                                <div class="relative h-[480px] rounded-[2.5rem] overflow-hidden shadow-2xl group">
+                                    <img src="images/facilitiesstorage/Secure Facilities3.webp" alt="Climate-Controlled Storage" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                                    <div class="absolute bottom-8 left-8 right-8">
+                                        <span class="inline-block bg-morris-blue text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full mb-3">Climate-Controlled</span>
+                                        <div class="text-white font-bold text-lg">Precision temperature &amp; humidity management</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-morris-blue uppercase tracking-widest mb-3">Sensitive Cargo Storage</h3>
+                                    <h2 class="text-4xl font-black text-zinc-900 uppercase tracking-tight leading-tight mb-6">Climate-Controlled Options for Sensitive Cargo</h2>
+                                    <p class="text-zinc-600 text-lg leading-relaxed mb-6">
+                                        Not all cargo tolerates the Houston heat and humidity. Morris Export Services maintains dedicated climate-controlled storage sections engineered to protect temperature- and humidity-sensitive equipment — whether that is days before vessel loading or months during a long-term project hold.
+                                    </p>
+                                    <p class="text-zinc-600 leading-relaxed mb-8">
+                                        From precision electronics and instrumentation to packaged machinery with factory corrosion warranties, our controlled-environment bays maintain stable conditions that prevent condensation damage, oxidation, and seal degradation caused by thermal cycling.
+                                    </p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="bg-zinc-50 rounded-2xl p-5 border border-zinc-100">
+                                            <div class="w-10 h-10 bg-blue-100 text-morris-blue rounded-xl flex items-center justify-center mb-3">
+                                                <i data-lucide="thermometer" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="font-bold text-zinc-900 mb-1">Temperature Management</div>
+                                            <div class="text-sm text-zinc-500">Controlled ambient conditions protecting against thermal cycling damage</div>
+                                        </div>
+                                        <div class="bg-zinc-50 rounded-2xl p-5 border border-zinc-100">
+                                            <div class="w-10 h-10 bg-blue-100 text-morris-blue rounded-xl flex items-center justify-center mb-3">
+                                                <i data-lucide="droplets" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="font-bold text-zinc-900 mb-1">Humidity Control</div>
+                                            <div class="text-sm text-zinc-500">Low-humidity environments prevent condensation and corrosion on metal surfaces</div>
+                                        </div>
+                                        <div class="bg-zinc-50 rounded-2xl p-5 border border-zinc-100">
+                                            <div class="w-10 h-10 bg-blue-100 text-morris-blue rounded-xl flex items-center justify-center mb-3">
+                                                <i data-lucide="cpu" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="font-bold text-zinc-900 mb-1">Electronics &amp; Instrumentation</div>
+                                            <div class="text-sm text-zinc-500">Ideal for sensitive controls, sensors, analyzers, and packaged systems</div>
+                                        </div>
+                                        <div class="bg-zinc-50 rounded-2xl p-5 border border-zinc-100">
+                                            <div class="w-10 h-10 bg-blue-100 text-morris-blue rounded-xl flex items-center justify-center mb-3">
+                                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                            </div>
+                                            <div class="font-bold text-zinc-900 mb-1">Warranty Preservation</div>
+                                            <div class="text-sm text-zinc-500">Maintains OEM warranty conditions for factory-sealed equipment</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Storage Types Overview -->
+                    <section class="py-24 bg-zinc-950 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-morris-blue/10 via-zinc-950 to-zinc-950"></div>
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                            <div class="text-center mb-16">
+                                <h3 class="text-sm font-bold text-morris-blue uppercase tracking-widest mb-3">Full-Service Facility</h3>
+                                <h2 class="text-4xl font-black text-white uppercase tracking-tight">Every Storage Need. One Location.</h2>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-morris-blue/40 transition-colors">
+                                    <div class="w-14 h-14 bg-morris-blue/20 text-morris-blue rounded-2xl flex items-center justify-center mb-6">
+                                        <i data-lucide="building-2" class="w-7 h-7"></i>
+                                    </div>
+                                    <h3 class="text-xl font-black text-white uppercase tracking-tight mb-3">Indoor Warehouse</h3>
+                                    <p class="text-zinc-400 leading-relaxed">250,000+ sq ft of covered warehouse space including dock-height bays, crane bays, and dedicated climate-controlled sections for sensitive cargo.</p>
+                                </div>
+                                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-morris-blue/40 transition-colors">
+                                    <div class="w-14 h-14 bg-morris-blue/20 text-morris-blue rounded-2xl flex items-center justify-center mb-6">
+                                        <i data-lucide="land-plot" class="w-7 h-7"></i>
+                                    </div>
+                                    <h3 class="text-xl font-black text-white uppercase tracking-tight mb-3">Outdoor Laydown Yard</h3>
+                                    <p class="text-zinc-400 leading-relaxed">Extensive secured and compacted gravel laydown areas for structural steel, pressure vessels, pipe bundles, spools, and bulk cargo awaiting export.</p>
+                                </div>
+                                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-morris-blue/40 transition-colors">
+                                    <div class="w-14 h-14 bg-morris-blue/20 text-morris-blue rounded-2xl flex items-center justify-center mb-6">
+                                        <i data-lucide="construction" class="w-7 h-7"></i>
+                                    </div>
+                                    <h3 class="text-xl font-black text-white uppercase tracking-tight mb-3">Heavy-Lift Capability</h3>
+                                    <p class="text-zinc-400 leading-relaxed">On-site forklift fleet from 5,000 to 36,000 lbs and crane assets up to 140,000 lbs capacity for receiving, relocating, and loading all cargo sizes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- CTA -->
+                    <section class="py-20 bg-zinc-50 border-t border-zinc-200">
+                        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                            <h2 class="text-3xl md:text-4xl font-black text-zinc-900 uppercase tracking-tight mb-4">Need Storage Near the Port of Houston?</h2>
+                            <p class="text-zinc-600 text-lg mb-8 max-w-2xl mx-auto">Whether you need short-term staging, long-term climate-controlled storage, or bonded warehousing, our team is ready to build a solution around your cargo.</p>
+                            <a href="#/contact-us" class="inline-block bg-morris-blue text-white py-4 px-12 rounded-xl font-bold uppercase tracking-widest transition-all shadow-lg hover:bg-blue-700 hover:-translate-y-1">Contact Our Facilities Team</a>
+                        </div>
+                    </section>
                 </div>
             `;
     }
+    
+        function renderBonded() {
+          return `
+                    <div class="pt-20">
+                      <section class="relative h-[40vh] flex items-center overflow-hidden">
+                        <div class="absolute inset-0 z-0">
+                          <img src="images/facilitiesstorage/Secure Facilities.webp" class="w-full h-full object-cover" alt="Bonded Facility" loading="lazy" decoding="async">
+                          <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent"></div>
+                        </div>
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-10">
+                          <h1 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4 drop-shadow-lg">Bonded Storage & Bonded Trucking</h1>
+                          <div class="w-24 h-1.5 bg-morris-red mb-6"></div>
+                          <h2 class="text-xl md:text-2xl font-medium text-blue-100 max-w-2xl">Secure bonded warehousing and specialized bonded drayage solutions.</h2>
+                        </div>
+                      </section>
+
+                      <section class="py-24 bg-zinc-50 relative -mt-10 z-20 rounded-t-[3rem] shadow-2xl">
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                          <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                            <div>
+                              <h3 class="text-3xl font-black tracking-tight mb-6 uppercase text-zinc-900">Bonded Storage</h3>
+                              <p class="text-zinc-600 mb-6">Our bonded warehouse provides U.S. Customs supervised storage allowing deferred duties and controlled handling under bond. Ideal for export staging, duty-suspension workflows, and projects that require tightly controlled chain-of-custody.</p>
+                              <ul class="list-inside space-y-3 text-zinc-700 mb-6">
+                                <li>Secure, monitored facility with segregation for bonded inventory</li>
+                                <li>Customs procedures and documentation support</li>
+                                <li>Climate-controlled and heavy-lift capable storage zones</li>
+                                <li>Inventory traceability via M-Pact real-time system</li>
+                              </ul>
+                              <a href="#/contact-us" class="inline-block bg-morris-blue text-white px-8 py-3 rounded-xl font-bold uppercase tracking-widest hover:bg-blue-700 transition-colors">Request Bonded Storage Info</a>
+                            </div>
+
+                            <div>
+                              <h3 class="text-3xl font-black tracking-tight mb-6 uppercase text-zinc-900">Bonded Trucking & Drayage</h3>
+                              <p class="text-zinc-600 mb-6">Our bonded trucking services support bonded pickup, port drayage, and secure transfer to customs-controlled facilities. Trained drivers and documented movements preserve bonded status throughout transport.</p>
+                              <ul class="list-inside space-y-3 text-zinc-700 mb-6">
+                                <li>Bonded chain-of-custody for port moves and inter-facility transfers</li>
+                                <li>Specialized equipment for out-of-gauge and heavy loads</li>
+                                <li>Permit and terminal coordination for bonded shipments</li>
+                                <li>Real-time tracking and proof-of-delivery documentation</li>
+                              </ul>
+                              <a href="#/contact-us" class="inline-block bg-morris-red text-white px-8 py-3 rounded-xl font-bold uppercase tracking-widest hover:bg-red-700 transition-colors">Contact Bonded Logistics</a>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="bg-white py-16 border-t border-zinc-200">
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                          <h3 class="text-2xl font-black mb-4 text-zinc-900">Frequently Asked: Bonded Services</h3>
+                          <p class="text-zinc-600 max-w-3xl mx-auto">If you need to store goods under Customs bond, or move bonded cargo to the port, our bonded services team provides compliant handling, permitting, and documentation. Reach out for a tailored quote and operational plan.</p>
+                        </div>
+                      </section>
+                    </div>
+                `;
+        }
 function renderCustomerCenter() {
       return `
                 <div class="pt-20">
@@ -2318,14 +2726,14 @@ function renderTerms() {
         // Desktop Link
         const a = document.createElement('a');
         a.href = link.path;
-        a.className = 'text-sm font-bold text-zinc-300 hover:text-white uppercase tracking-widest transition-colors nav-modern';
+        a.className = 'text-sm nav-link-desktop nav-modern';
         a.textContent = link.name;
         navLinksContainer.appendChild(a);
 
         // Mobile Link
         const mobileA = document.createElement('a');
         mobileA.href = link.path;
-        mobileA.className = 'block px-4 py-4 border-b border-zinc-900 text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors';
+        mobileA.className = 'block px-3 py-3 border-b border-zinc-900 text-sm font-semibold uppercase tracking-tight text-zinc-400 hover:text-white transition-colors';
         mobileA.textContent = link.name;
         mobileA.onclick = () => {
           document.getElementById('mobile-menu').classList.add('hidden');
@@ -2348,6 +2756,8 @@ function renderTerms() {
       // Initial render
       window.onhashchange = renderPage;
       renderPage();
+      // Extra attempt to attach search handlers after first render (debugging/fallback)
+      try { attachSearchHandlers(); console.log('attachSearchHandlers called (DOMContentLoaded fallback)'); } catch (err) { console.error('attachSearchHandlers error (DOMContentLoaded):', err); }
     });
   </script>
 </body>
