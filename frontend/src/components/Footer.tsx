@@ -58,24 +58,21 @@ export default function Footer() {
               Contact
             </h4>
             <ul className="space-y-4">
-              <li className="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-morris-blue shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-500 mb-2">Main Office</p>
-                    <a href="https://www.google.com/maps/search/1225+McCarty+Street,+77029?entry=gmail&source=g" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-white hover:text-morris-blue transition-colors leading-relaxed">
-                      1225 McCarty Street<br />Houston, TX 77029
-                    </a>
-                  </div>
-                </div>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-zinc-500 shrink-0 mt-0.5" />
+                <span className="text-sm">
+                  <a href="https://www.google.com/maps/search/1225+McCarty+Street,+77029?entry=gmail&source=g" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    1225 McCarty Street<br />Houston, TX 77029
+                  </a>
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-zinc-500 shrink-0" />
-                <a href="tel:+17136759101" className="text-sm font-semibold text-white hover:text-morris-blue transition-colors">713-675-9101</a>
+                <a href="tel:+17136759101" className="text-sm hover:text-white transition-colors">713-675-9101</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-zinc-500 shrink-0" />
-                <a href="mailto:sales@morrisexport.com" className="text-sm font-semibold text-white hover:text-morris-blue transition-colors">sales@morrisexport.com</a>
+                <a href="mailto:sales@morrisexport.com" className="text-sm hover:text-white transition-colors">sales@morrisexport.com</a>
               </li>
             </ul>
           </div>
