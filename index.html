@@ -1000,7 +1000,13 @@
           { q: 'Can fumigation be performed at my facility or at the port?', a: 'Yes. Our mobile fumigation teams can treat containers and wooden packaging at your facility, at our Houston warehouse, or at port staging areas — we coordinate timing with your vessel schedule to ensure compliance without delaying gate-in.' }
         ],
         industries: ['Agricultural Exports', 'Oil & Gas', 'Industrial Equipment', 'Chemical Products', 'Freight Forwarders'],
-        keyBenefits: ['USDA Licensed', 'ISPM-15 Compliant', 'Fumigation Certificates', 'Container Washing', 'Mobile Service', 'Full Documentation']
+        keyBenefits: ['USDA Licensed', 'ISPM-15 Compliant', 'Fumigation Certificates', 'Container Washing', 'Mobile Service', 'Full Documentation'],
+        partner: {
+          name: 'All World Fumigation',
+          url: 'https://www.allworldfumigation.com/',
+          tagline: 'Licensed & Certified Fumigation Specialists',
+          description: 'Morris Export Services has partnered with All World Fumigation — a licensed, USDA-certified fumigation company — to deliver fully compliant phytosanitary treatments for export containers, wooden packaging, and bulk cargo. This partnership ensures every fumigation job is performed by dedicated specialists with the certifications, equipment, and regulatory knowledge required for seamless international clearance.'
+        }
       }
     ];
 
@@ -1753,6 +1759,44 @@ function renderServiceDetail(slug) {
         </li>
       `).join('');
 
+      const partnerBannerHtml = service.partner ? `
+        <section style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%); position: relative; overflow: hidden;">
+          <div style="position:absolute;inset:0;opacity:0.07;background:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:20px 20px;"></div>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;">
+              <div style="flex:1;min-width:260px;">
+                <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:9999px;padding:6px 16px;margin-bottom:16px;">
+                  <svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#60a5fa' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/><circle cx='9' cy='7' r='4'/><path d='M23 21v-2a4 4 0 0 0-3-3.87'/><path d='M16 3.13a4 4 0 0 1 0 7.75'/></svg>
+                  <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#93c5fd;">Authorized Partner</span>
+                </div>
+                <h2 style="font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.1;margin:0 0 8px;">
+                  ${service.partner.name}
+                </h2>
+                <p style="font-size:13px;font-weight:600;color:#93c5fd;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 20px;">${service.partner.tagline}</p>
+                <p style="color:#cbd5e1;font-size:15px;line-height:1.7;max-width:600px;margin:0 0 28px;">${service.partner.description}</p>
+                <a href="${service.partner.url}" target="_blank" rel="noopener noreferrer"
+                  style="display:inline-flex;align-items:center;gap:10px;background:#2563eb;color:#fff;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:0.1em;padding:14px 28px;border-radius:10px;text-decoration:none;transition:background 0.2s;border:2px solid rgba(255,255,255,0.15);"
+                  onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                  <svg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/><polyline points='15 3 21 3 21 9'/><line x1='10' y1='14' x2='21' y2='3'/></svg>
+                  Visit All World Fumigation
+                </a>
+              </div>
+              <div style="flex-shrink:0;text-align:center;">
+                <div style="background:rgba(255,255,255,0.06);border:2px solid rgba(255,255,255,0.15);border-radius:20px;padding:28px 36px;">
+                  <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#93c5fd;margin-bottom:10px;">Fumigation Partner Since</div>
+                  <div style="font-size:3rem;font-weight:900;color:#fff;line-height:1;">USDA</div>
+                  <div style="font-size:11px;color:#93c5fd;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:6px;">Certified Applicators</div>
+                  <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size:2rem;font-weight:900;color:#fff;line-height:1;">ISPM-15</div>
+                    <div style="font-size:11px;color:#93c5fd;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-top:6px;">Phytosanitary Compliant</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ` : '';
+
       return `
                 <div class="pt-20">
                     <!-- Service Hero -->
@@ -1763,6 +1807,8 @@ function renderServiceDetail(slug) {
                             <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter text-center px-4">${service.title}</h1>
                         </div>
                     </section>
+
+                    ${partnerBannerHtml}
 
                     <section class="bg-white py-24">
                         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
