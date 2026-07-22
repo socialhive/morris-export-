@@ -2755,17 +2755,49 @@ function renderOurTeam() {
     }
 function renderTerms() {
       return `
-                <div class="pt-32 pb-24">
-                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 class="text-4xl font-black tracking-tight mb-8 uppercase">Terms and Conditions</h1>
-                        <div class="prose prose-zinc lg:prose-lg max-w-none">
-                            <p class="mb-8">
-                                All services provided by Morris Export Services are subject to our standard terms and conditions. 
-                                Please review the full document for detailed information regarding liabilities, responsibilities, and service agreements.
+                <div class="pt-20 pb-24 bg-zinc-50 min-h-screen">
+                    <!-- Hero -->
+                    <div style="background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%);padding:60px 24px 48px;">
+                        <div class="max-w-4xl mx-auto">
+                            <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:9999px;padding:5px 14px;margin-bottom:20px;">
+                                <i data-lucide="file-text" style="width:13px;height:13px;color:#93c5fd;"></i>
+                                <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#93c5fd;">Legal Document</span>
+                            </div>
+                            <h1 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">Terms &amp; Conditions</h1>
+                            <p style="color:#cbd5e1;font-size:16px;line-height:1.6;max-width:580px;margin-bottom:28px;">
+                                All services provided by Morris Export Services are subject to the terms and conditions detailed in the document below. Please review carefully before engaging our services.
                             </p>
-                            <a href="/wp-content/uploads/2019/06/Terms-And-Conditions.pdf" class="inline-flex items-center bg-zinc-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all">
-                                Download Full Terms (PDF) <i data-lucide="external-link" class="w-5 h-5 ml-2"></i>
-                            </a>
+                            <div style="display:flex;flex-wrap:wrap;gap:12px;">
+                                <a href="Terms-And-Conditions.pdf" download
+                                   style="display:inline-flex;align-items:center;gap:8px;background:#2563eb;color:#fff;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;padding:12px 24px;border-radius:9px;text-decoration:none;">
+                                    <i data-lucide="download" style="width:15px;height:15px;"></i>
+                                    Download PDF
+                                </a>
+                                <a href="Terms-And-Conditions.pdf" target="_blank" rel="noopener"
+                                   style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);color:#fff;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;padding:12px 24px;border-radius:9px;text-decoration:none;border:1px solid rgba(255,255,255,0.2);">
+                                    <i data-lucide="external-link" style="width:15px;height:15px;"></i>
+                                    Open in New Tab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedded PDF viewer -->
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                        <div style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(0,0,0,0.10);border:1px solid #e4e7ec;">
+                            <div style="background:#f8fafc;padding:12px 20px;border-bottom:1px solid #e4e7ec;display:flex;align-items:center;gap:10px;">
+                                <i data-lucide="file-text" style="width:16px;height:16px;color:#2563eb;"></i>
+                                <span style="font-size:13px;font-weight:700;color:#374151;">Terms-And-Conditions.pdf</span>
+                            </div>
+                            <iframe
+                                src="Terms-And-Conditions.pdf"
+                                style="width:100%;height:820px;border:none;display:block;"
+                                title="Morris Export Services Terms and Conditions">
+                                <p style="padding:24px;color:#6b7280;">
+                                    Your browser cannot display the PDF inline.
+                                    <a href="Terms-And-Conditions.pdf" target="_blank" style="color:#2563eb;font-weight:700;">Click here to open it.</a>
+                                </p>
+                            </iframe>
                         </div>
                     </div>
                 </div>
