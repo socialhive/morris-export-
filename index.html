@@ -2274,29 +2274,89 @@ function renderContact() {
                                 
                                 <div class="bg-white p-10 md:p-14 rounded-[2rem] border border-zinc-100 shadow-xl">
                                     <h3 class="text-2xl font-black mb-8 uppercase text-zinc-900">Send a Message</h3>
-                                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message sent! (Simulation)');">
+
+                                    <!-- Success state -->
+                                    <div id="contact-success" class="hidden text-center py-8">
+                                        <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                                            <i data-lucide="check-circle" class="w-8 h-8 text-green-500"></i>
+                                        </div>
+                                        <h4 class="text-xl font-black text-zinc-900 uppercase mb-2">Message Sent!</h4>
+                                        <p class="text-zinc-500 text-sm">Thank you — we'll be in touch shortly.</p>
+                                    </div>
+
+                                    <!-- Error state -->
+                                    <div id="contact-error" class="hidden mb-6 bg-red-50 border border-red-200 text-red-700 text-sm font-medium px-5 py-4 rounded-xl">
+                                        Something went wrong. Please try again or email us directly at <a href="mailto:sales@morrisexport.com" class="underline">sales@morrisexport.com</a>.
+                                    </div>
+
+                                    <form id="contact-form" class="space-y-6">
                                         <div class="grid grid-cols-2 gap-6">
                                             <div>
                                                 <label class="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">First Name</label>
-                                                <input type="text" required class="w-full px-5 py-4 bg-zinc-50 rounded-xl border border-zinc-200 focus:border-morris-blue focus:ring-2 focus:ring-blue-100 focus:bg-white outline-none transition-all text-lg">
+                                                <input type="text" name="first_name" required class="w-full px-5 py-4 bg-zinc-50 rounded-xl border border-zinc-200 focus:border-morris-blue focus:ring-2 focus:ring-blue-100 focus:bg-white outline-none transition-all text-lg">
                                             </div>
                                             <div>
                                                 <label class="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">Last Name</label>
-                                                <input type="text" required class="w-full px-5 py-4 bg-zinc-50 rounded-xl border border-zinc-200 focus:border-morris-blue focus:ring-2 focus:ring-blue-100 focus:bg-white outline-none transition-all text-lg">
+                                                <input type="text" name="last_name" required class="w-full px-5 py-4 bg-zinc-50 rounded-xl border border-zinc-200 focus:border-morris-blue focus:ring-2 focus:ring-blue-100 focus:bg-white outline-none transition-all text-lg">
                                             </div>
                                         </div>
                                         <div>
                                             <label class="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">Email Address</label>
-                                            <input type="email" required class="w-full px-5 py-4 bg-zinc-50 rounded-xl border border-zinc-200 focus:border-morris-blue focus:ring-2 focus:ring-blue-100 focus:bg-white outline-none transition-all text-lg">
+                                            <input type="email" name="email" required class="w-full px-5 py-4 bg-zinc-50 rounded-xl border border-zinc-200 focus:border-morris-blue focus:ring-2 focus:ring-blue-100 focus:bg-white outline-none transition-all text-lg">
                                         </div>
                                         <div>
                                             <label class="block text-sm font-bold text-zinc-700 mb-2 uppercase tracking-wide">Message</label>
-                                            <textarea rows="4" required class="w-full px-5 py-4 bg-zinc-50 rounded-xl border border-zinc-200 focus:border-morris-blue focus:ring-2 focus:ring-blue-100 focus:bg-white outline-none transition-all text-lg resize-none"></textarea>
+                                            <textarea name="message" rows="4" required class="w-full px-5 py-4 bg-zinc-50 rounded-xl border border-zinc-200 focus:border-morris-blue focus:ring-2 focus:ring-blue-100 focus:bg-white outline-none transition-all text-lg resize-none"></textarea>
                                         </div>
-                                        <button type="submit" class="w-full bg-morris-blue text-white font-black uppercase tracking-widest py-5 rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/30">
+                                        <button type="submit" id="contact-submit-btn" class="w-full bg-morris-blue text-white font-black uppercase tracking-widest py-5 rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/30">
                                             Send Message
                                         </button>
                                     </form>
+
+                                    <script>
+                                    (function() {
+                                        function initContactForm() {
+                                            var form = document.getElementById('contact-form');
+                                            if (!form || form._formspreeWired) return;
+                                            form._formspreeWired = true;
+                                            form.addEventListener('submit', async function(e) {
+                                                e.preventDefault();
+                                                var btn = document.getElementById('contact-submit-btn');
+                                                var successEl = document.getElementById('contact-success');
+                                                var errorEl = document.getElementById('contact-error');
+                                                btn.disabled = true;
+                                                btn.textContent = 'Sending\u2026';
+                                                errorEl.classList.add('hidden');
+                                                try {
+                                                    var res = await fetch('https://formspree.io/f/mpqvyabp', {
+                                                        method: 'POST',
+                                                        headers: { 'Accept': 'application/json' },
+                                                        body: new FormData(form)
+                                                    });
+                                                    if (res.ok) {
+                                                        form.classList.add('hidden');
+                                                        successEl.classList.remove('hidden');
+                                                        lucide.createIcons();
+                                                    } else {
+                                                        throw new Error('not ok');
+                                                    }
+                                                } catch(err) {
+                                                    errorEl.classList.remove('hidden');
+                                                    btn.disabled = false;
+                                                    btn.textContent = 'Send Message';
+                                                }
+                                            });
+                                        }
+                                        // Run after DOM is ready — the form is injected dynamically
+                                        if (document.readyState === 'loading') {
+                                            document.addEventListener('DOMContentLoaded', initContactForm);
+                                        } else {
+                                            setTimeout(initContactForm, 0);
+                                        }
+                                        // Also hook into hashchange so it works on re-navigation
+                                        window.addEventListener('hashchange', function() { setTimeout(initContactForm, 100); });
+                                    })();
+                                    </script>
                                 </div>
                             </div>
                         </div>
