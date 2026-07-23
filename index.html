@@ -2653,15 +2653,20 @@ function renderCreditApplication() {
                                         </div>
                                     </div>
 
-                                    <!-- Error message -->
+                                    <!-- Validation error -->
                                     <div id="credit-form-error" class="hidden mt-6 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-medium">
                                         <i data-lucide="alert-circle" class="w-4 h-4 inline mr-2"></i>
                                         Please complete all required fields before submitting.
                                     </div>
+                                    <!-- Network/submission error -->
+                                    <div id="credit-submit-error" class="hidden mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-medium">
+                                        <i data-lucide="wifi-off" class="w-4 h-4 inline mr-2"></i>
+                                        Submission failed. Please try again or email us at <a href="mailto:sales@morrisexport.com" class="underline font-bold">sales@morrisexport.com</a>.
+                                    </div>
 
                                     <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                                         <p class="text-xs text-zinc-400"><span class="text-morris-red">*</span> Required fields</p>
-                                        <button type="submit" class="inline-flex items-center justify-center gap-3 bg-morris-blue hover:bg-blue-700 text-white font-black uppercase tracking-widest px-10 py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20 hover:shadow-blue-900/40 hover:-translate-y-0.5 active:translate-y-0 text-sm">
+                                        <button type="submit" id="credit-app-submit-btn" class="inline-flex items-center justify-center gap-3 bg-morris-blue hover:bg-blue-700 text-white font-black uppercase tracking-widest px-10 py-4 rounded-xl transition-all shadow-lg shadow-blue-900/20 hover:shadow-blue-900/40 hover:-translate-y-0.5 active:translate-y-0 text-sm">
                                             <i data-lucide="send" class="w-5 h-5"></i>
                                             Submit Application
                                         </button>
@@ -2675,24 +2680,51 @@ function renderCreditApplication() {
             `;
     }
 
-    function submitCreditApplication(e) {
+    async function submitCreditApplication(e) {
       e.preventDefault();
       const form = document.getElementById('credit-app-form');
-      const errorEl = document.getElementById('credit-form-error');
+      const validationErrorEl = document.getElementById('credit-form-error');
+      const submitErrorEl = document.getElementById('credit-submit-error');
       const successEl = document.getElementById('credit-app-success');
+      const btn = document.getElementById('credit-app-submit-btn');
 
+      // Client-side validation
       if (!form.checkValidity()) {
-        errorEl.classList.remove('hidden');
+        validationErrorEl.classList.remove('hidden');
         form.querySelectorAll(':invalid')[0]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         lucide.createIcons();
         return;
       }
 
-      errorEl.classList.add('hidden');
-      form.classList.add('hidden');
-      successEl.classList.remove('hidden');
-      successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      lucide.createIcons();
+      validationErrorEl.classList.add('hidden');
+      submitErrorEl.classList.add('hidden');
+
+      // Loading state
+      btn.disabled = true;
+      btn.innerHTML = '<svg class="animate-spin w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg> Submitting…';
+
+      try {
+        const res = await fetch('https://formspree.io/f/mrenyzja', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+
+        if (res.ok) {
+          form.classList.add('hidden');
+          successEl.classList.remove('hidden');
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          lucide.createIcons();
+        } else {
+          throw new Error('Server error: ' + res.status);
+        }
+      } catch (err) {
+        submitErrorEl.classList.remove('hidden');
+        submitErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        btn.disabled = false;
+        btn.innerHTML = '<i data-lucide="send" class="w-5 h-5"></i> Submit Application';
+        lucide.createIcons();
+      }
     }
 function renderFAQ() {
       const faqs = [
